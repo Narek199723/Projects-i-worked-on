@@ -1,0 +1,17 @@
+#profileImage {
+    height: 60px;
+    display: flex;
+    width: 60px;
+    background: #bdbdbd;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.dashSidebar .MuiPaper-root{
+    width: 240px !important;
+}

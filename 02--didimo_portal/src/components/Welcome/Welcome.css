@@ -1,0 +1,45 @@
+@media (min-width: 900px) {
+    .css-1o6ki99 {
+        padding-left: 256px;
+    }
+}
+
+.css-r2jef8 {
+    margin: 20px;
+    box-shadow: 0 0 0 1px rgba(63, 63, 68, 5%), 0 1px 3px 0 rgba(63, 63, 68, 15%);
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.container_main {
+    background-color: #ffffff;
+    max-width: 100%;
+    padding: 0;
+}
+.check_bar{
+    padding: 0 15px;
+}
+@media (max-width: 576px) {
+    .welcome_content{
+        padding: 0 15px;
+    }
+    .container_main .css-vj1n65-MuiGrid-root{
+        padding: 0 !important;
+    }
+    .container_main .main_title{
+        font-size: 48px !important;
+    }
+    .container_main .sub_title{
+        font-size: 28px !important;
+    }
+    .container_main .content{
+        margin-top: 10px;
+        padding: 0 !important;
+    }
+    .container_main .list_details{
+        padding-left: 45px !important;
+    }
+    .container_main .check_bar{
+        text-align: left !important;
+    }
+}

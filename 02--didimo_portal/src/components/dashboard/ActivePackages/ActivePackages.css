@@ -1,0 +1,20 @@
+.mainHeaderPackage span {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.mainHeaderPackage .makeStyles-buyBtnDesign-180:hover {
+    background-color: rgba(0, 0, 0, 0.87);
+}
+
+.CurrentLinerProgress .defaultProgress {
+    color: red;
+}
+
+.mainHeaderPackage .MuiList-root li {
+    padding-left: 0 !important;
+}
+.ActivePackageContent .css-zphlvl-MuiListItem-root{
+    padding: 0 !important;
+}

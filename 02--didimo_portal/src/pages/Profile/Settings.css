@@ -1,0 +1,29 @@
+.settingNav .MuiTypography-h5{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.user_detail .MuiFormControl-root {
+    margin: 0 !important;
+}
+.delete_accou p{
+    font-size: 14px;
+    margin: 14px 0;
+}
+.delete_input .css-1o2jng6-MuiOutlinedInput-notchedOutline{
+    border: 0;
+    border-bottom: 1px solid #2a0651;
+    border-radius: 0;
+    font-size: 14px;
+    padding: 0 !important;
+}
+.delete_input .MuiOutlinedInput-input {
+    padding: 9px 0px;
+    left: -10px !important;
+}
+.delete_input .MuiInputLabel-formControl {
+    left: -10px;
+}
+.delete_input .MuiOutlinedInput-root {
+    overflow: hidden;
+}
