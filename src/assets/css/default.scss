@@ -1,0 +1,125 @@
+html {
+  min-height: 100%;
+}
+body {
+  font-family: Poppins !important;
+
+  // background: linear-gradient(
+  //   72.69deg,
+  //   #ffffff 0%,
+  //   #fcf1ff 34.89%,
+  //   #fcf2ff 37.03%,
+  //   #e4e6ff 99.65%
+  // );
+  background-color: #f7f7f7;
+  // background-image: url('../images/bluecapbg.png');
+  background-size: cover;
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  font-family: Poppins;
+}
+.footer {
+  position: absolute;
+  bottom: 10%;
+}
+.justify-center {
+  justify-content: center;
+  display: flex;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.text-center {
+  text-align: center;
+}
+
+.frm-block {
+  margin: 40px 0;
+}
+
+.meeting-settings {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 0px 10px #e5e6ff;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 5px;
+  height: 48px;
+}
+
+.meeting-settings:hover {
+  background-color: #b345d2;
+}
+
+.meeting-settings:selected {
+  background-color: #b345d2;
+}
+
+.meeting-label {
+  margin-bottom: 20px;
+  font-family: Poppins !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  color: #000000 !important;
+}
+
+.main-container {
+  max-width: 700px !important;
+  margin: 40px auto !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .subtitle {
+    padding: 0px 130px 10px;
+  }
+}
+
+#organization-name::placeholder {
+  color: #7da8fb;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+}
+.bc-icon {
+  padding: 50px;
+}
+table#pastmeetings {
+  th {
+    font-size: 12px;
+    color: #7da8fb;
+    border-radius: 0;
+    background: none;
+    font-weight: 100;
+  }
+  tr:hover {
+    background: #edf3ff;
+    border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: inset 8px 0 0 #fff;
+    padding-right: 24px;
+  }
+}
+
+#zsiqbtn{
+  z-index: 0;
+  background: #EDF3FF;
+  display: flex !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 20px;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+
+#block-past-meetings {
+  border-radius: 6px;
+}

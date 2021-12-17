@@ -1,0 +1,4 @@
+.selectContainer fieldset legend {
+  position: relative;
+  display: none !important;
+}

@@ -1,0 +1,285 @@
+import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { Link as RouterLink, useLocation, NavLink } from "react-router-dom";
+// material
+import { alpha, styled } from "@material-ui/core/styles";
+import {
+  Box,
+  Link,
+  Stack,
+  Avatar,
+  Drawer,
+  Tooltip,
+  Typography,
+  CardActionArea,
+  Grid,
+  Paper,
+} from "@material-ui/core";
+
+// hooks
+import useCollapseDrawer from "../../hooks/useCollapseDrawer";
+// components
+//import Logo from '../../components/Logo';
+import Scrollbar from "../../components/Scrollbar";
+import NavSection from "../../components/NavSection";
+import NotificationsPopover from "./NotificationsPopover";
+//
+import { MHidden } from "../../components/@material-extend";
+import sidebarConfig from "./SidebarConfig";
+
+// ----------------------------------------------------------------------
+
+const DRAWER_WIDTH = 220;
+const COLLAPSE_WIDTH = 100;
+
+const RootStyle = styled("div")(({ theme }) => ({
+  [theme.breakpoints.up("lg")]: {
+    flexShrink: 0,
+    transition: theme.transitions.create("width", {
+      duration: theme.transitions.duration.complex,
+    }),
+  },
+}));
+
+const AccountStyle = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  padding: theme.spacing(2, 2.5),
+  borderRadius: theme.shape.borderRadiusSm,
+  backgroundColor: theme.palette.grey[500_12],
+}));
+
+// ----------------------------------------------------------------------
+
+IconCollapse.propTypes = {
+  onToggleCollapse: PropTypes.func,
+  collapseClick: PropTypes.bool,
+};
+
+function IconCollapse({ onToggleCollapse, collapseClick }) {
+  return (
+    <Tooltip title="Mini Menu">
+      <CardActionArea
+        onClick={onToggleCollapse}
+        sx={{
+          width: 18,
+          height: 18,
+          display: "flex",
+          cursor: "pointer",
+          borderRadius: "50%",
+          alignItems: "center",
+          color: "text.primary",
+          justifyContent: "center",
+          marginRight: "-20px",
+          ...(collapseClick && {
+            borderWidth: 2,
+          }),
+        }}
+      >
+        <img src="/icons/mini-menu.svg" style={{ marginRight: "5px" }} />
+        <Box
+          sx={{
+            width: 8,
+            height: 8,
+            borderRadius: "50%",
+            bgcolor: "currentColor",
+            transition: (theme) => theme.transitions.create("all"),
+            ...(collapseClick && {
+              width: 0,
+              height: 0,
+            }),
+          }}
+        />
+      </CardActionArea>
+    </Tooltip>
+  );
+}
+
+DashboardSidebar.propTypes = {
+  isOpenSidebar: PropTypes.bool,
+  onCloseSidebar: PropTypes.func,
+};
+
+export default function DashboardSidebar({
+  user,
+  logout,
+  isOpenSidebar,
+  onCloseSidebar,
+}) {
+  const { pathname } = useLocation();
+
+  const {
+    isCollapse,
+    collapseClick,
+    collapseHover,
+    onToggleCollapse,
+    onHoverEnter,
+    onHoverLeave,
+  } = useCollapseDrawer();
+
+  useEffect(() => {
+    if (isOpenSidebar) {
+      onCloseSidebar();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+
+  const renderSideBarMobileHeader = () => {
+    const { photoURL, displayName } = user;
+    return (
+      <div className="sidebar-header-mobile">
+        <NavLink to="/profile">
+          <img className="user-photo" src={photoURL}></img>
+        </NavLink>
+        {displayName}
+        <Grid className="credits" container>
+          <Grid item xs={6}>
+            Credit
+          </Grid>
+          <Grid item xs={6}>
+            <b>300</b>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  };
+
+  const renderSideBarMobileFooter = () => {
+    const { photoURL, displayName } = user;
+    return (
+      <div className="sidebar-footer-mobile">
+        <div className="logout-link" onClick={logout}>
+          Logout
+        </div>
+      </div>
+    );
+  };
+
+  const renderContent = (
+    <Scrollbar
+      id="navigation-sidebar"
+      sx={{
+        height: "100%",
+        "& .simplebar-content": {
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        },
+      }}
+    >
+      <Stack
+        spacing={3}
+        sx={{
+          px: 2.5,
+          pt: 3,
+          pb: 2,
+          ...(isCollapse && {
+            alignItems: "center",
+          }),
+        }}
+        style={{
+          paddingTop: "0px",
+          marginBottom: "-25px",
+        }}
+      >
+        <Stack direction="row" alignItems="center" justifyContent="flex-end">
+          {/* <Box component={RouterLink} to='/' sx={{ display: 'inline-flex' }}>
+            <Logo />
+          </Box> */}
+
+          {/* <MHidden width="lgDown">
+            {!isCollapse && (
+              <IconCollapse
+                onToggleCollapse={onToggleCollapse}
+                collapseClick={collapseClick}
+              />
+            )}
+          </MHidden> */}
+        </Stack>
+
+        {/* {isCollapse ? (
+          <Avatar
+            alt='My Avatar'
+            src='/static/mock-images/avatars/avatar_default.jpg'
+            sx={{ mx: 'auto', mb: 2 }}
+          />
+        ) : (
+          <Link underline='none' component={RouterLink} to='#'>
+            <AccountStyle>
+              <Avatar alt='My Avatar' src='/static/mock-images/avatars/avatar_default.jpg' />
+              <Box sx={{ ml: 2 }}>
+                <Typography variant='subtitle2' sx={{ color: 'text.primary' }}>
+                  displayName
+                </Typography>
+                <Typography variant='body2' sx={{ color: 'text.secondary' }}>
+                  role
+                </Typography>
+              </Box>
+            </AccountStyle>
+          </Link>
+        )} */}
+      </Stack>
+
+      {renderSideBarMobileHeader()}
+      <NavSection navConfig={sidebarConfig} isShow={!isCollapse} />
+      {renderSideBarMobileFooter()}
+    </Scrollbar>
+  );
+
+  return (
+    <RootStyle
+      sx={{
+        width: {
+          lg: isCollapse ? COLLAPSE_WIDTH : DRAWER_WIDTH,
+        },
+
+        ...(collapseClick && {
+          position: "absolute",
+        }),
+      }}
+    >
+      <MHidden width="lgUp">
+        <Drawer
+          open={isOpenSidebar}
+          onClose={onCloseSidebar}
+          PaperProps={{
+            sx: { width: DRAWER_WIDTH },
+          }}
+        >
+          {renderContent}
+        </Drawer>
+      </MHidden>
+
+      <MHidden width="lgDown">
+        <Drawer
+          open
+          variant="persistent"
+          onMouseEnter={onHoverEnter}
+          onMouseLeave={onHoverLeave}
+          PaperProps={{
+            sx: {
+              top: 110,
+              backgroundColor: "#f7f7f7",
+              width: DRAWER_WIDTH,
+              flexShrink: 0,
+              // bgcolor: "transparent",
+              ...(isCollapse && {
+                width: COLLAPSE_WIDTH,
+              }),
+              ...(collapseHover && {
+                borderRight: 0,
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)", // Fix on Mobile
+                boxShadow: (theme) => theme.customShadows.z20,
+                bgcolor: (theme) =>
+                  alpha(theme.palette.background.default, 0.88),
+              }),
+            },
+          }}
+        >
+          {renderContent}
+        </Drawer>
+      </MHidden>
+    </RootStyle>
+  );
+}

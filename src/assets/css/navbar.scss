@@ -1,0 +1,174 @@
+.username {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 120%;
+  margin-left: 15px;
+}
+.navbarcredit-box {
+  color: #7295e4;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.forcast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 120px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+#navbar-dashboard {
+  box-shadow: 0px 0px 10px #E5E6FF;
+  .schedule-meeting-btn {
+    .expand-arrow-icon {
+      margin-left: 10px;
+    }
+  }
+  .schedule-meeting-btn:hover {
+    color: #2c73ff;
+  }
+
+  .logo-header {
+    margin-left: 30px;
+  }
+
+  .hamburger-full-width {
+    position: absolute;
+    margin-top: 28px;
+    margin-left: 30px;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .hamburger-full-width {
+      display: none;
+    }
+    .logo-header {
+      margin-left: 0px;
+      width: 100%;
+      z-index: -1;
+      img {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: -5px;
+        height: 40px;
+      }
+    }
+    .schedule-meeting-btn {
+      display: none;
+    }
+    .meeting-in-progress {
+      display: none;
+    }
+    .header-user-details {
+      display: none;
+    }
+    .header-credit {
+      display: none;
+    }
+    .header-searchbar {
+      display: none;
+    }
+    .header-user-menu {
+      display: none;
+    }
+  }
+}
+#schedule-meeting-btn-popover {
+  height: 180px;
+  width: 187px;
+  .option {
+    margin-bottom: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    color: #303030;
+  }
+  #meeting-url {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #e5e6ff;
+    border-radius: 6px;
+  }
+  #meeting-url::placeholder {
+    color: #7da8fb;
+  }
+  .MuiOutlinedInput-notchedOutline {
+    border: none;
+    border-radius: 6px;
+  }
+}
+
+#sidebar-navigation {
+  a.MuiListItemButton-root {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  a.active {
+    color: #b345d2;
+    background: white;
+    border-right: 10px solid #b345d2;
+  }
+}
+
+#navigation-sidebar {
+  .css-sfsl2f-Stack-root {
+    margin-top: 24px;
+  }
+  .css-1ri3jn2-Stack-root {
+  }
+
+  .sidebar-header-mobile {
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    .user-photo {
+      height: 50px;
+      width: 50px;
+      margin: 0 auto;
+    }
+    .credits {
+      margin-top: 10px;
+      box-shadow: 0px 0px 10px #e5e6ff;
+    }
+  }
+  .sidebar-footer-mobile {
+    display: none;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 20px;
+
+    .logout-link {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    .sidebar-header-mobile {
+      display: block;
+    }
+    .sidebar-footer-mobile {
+      display: block;
+    }
+  }
+}

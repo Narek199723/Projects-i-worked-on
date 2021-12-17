@@ -1,0 +1,49 @@
+.google-button {
+    position: absolute;
+    width: 500px;
+    height: 85px;
+    left: 115px;
+    top: 320px;
+    background: linear-gradient(257.11deg, #FCF1FF 18.67%, #FCF2FF 48.45%, #E4E6FF 100%);
+    border-radius: 6px;
+    text-align: left;
+    color: #303030 !important;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.typography {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: 592px;
+    top: 80px;
+    background: #FFFFFF;
+    border-radius: 6px;
+}
+
+.bc-icon {
+    padding: 50px ;
+}
+
+.desc-txt {
+    padding: 70px;
+    text-align: center;
+}
+
+.welcome-txt {
+    position: absolute;
+    left: 280px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px !important;
+    line-height: 100%;
+    text-align: center;
+    color: #303030;
+}
+
+.forward-icon {
+    margin-top: 13px;
+    font-size: 20px;
+}

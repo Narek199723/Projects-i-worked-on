@@ -1,0 +1,26 @@
+#wrapper-notification-criticals {
+  position: fixed;
+  top: 80px;
+  z-index: 9999;
+  background: white;
+  left: 70%;
+  transform: translateX(-50%);
+  box-shadow: 0 15px 10px -15px #111;
+  border-radius: 10px;
+
+  .message {
+    padding: 1px 30px 1px 30px;
+  }
+
+  .alert-icon {
+    height: 15px;
+    display: inline;
+    margin-right: 10px;
+  }
+  .close-icon {
+    margin-left: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 12px;
+  }
+}

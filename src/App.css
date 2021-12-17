@@ -1,0 +1,126 @@
+.App {
+  /* text-align: center; */
+}
+
+.logo {
+  padding: 50px;
+}
+
+/* .app-container {
+  background-image: url(./BlueCAPBG.png);
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.organization-name {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 20px 0 !important;
+}
+
+.frm-block {
+  margin: 40px 0;
+}
+
+.MuiFormControlLabel-root {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 0px 10px #e5e6ff;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  padding: 5px;
+  height: 48px;
+}
+
+.MuiFormControlLabel-root:hover {
+  background-color: #b345d2;
+}
+
+.MuiFormControlLabel-root:selected {
+  background-color: #b345d2;
+}
+
+.MuiFormLabel-root {
+  margin-bottom: 20px;
+  font-family: Poppins !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  font-size: 17px !important;
+  color: #000000 !important;
+}
+
+.MuiContainer-maxWidthSm {
+  max-width: 700px !important;
+  border-radius: 6px !important;
+}
+
+@media only screen and (min-width: 600px) {
+  .MuiTypography-gutterBottom {
+    padding: 0px 130px 10px;
+  }
+}
+
+.MuiOutlinedInput-input {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px #e5e6ff !important;
+}
+
+.MuiBox-root-2 {
+  border-radius: 6px;
+  margin: 20px auto !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 6px !important;
+}
+
+.aa-Panel {
+  z-index: 1111;
+  top: 65px !important;
+  position: fixed !important;
+}
